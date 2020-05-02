@@ -40,7 +40,7 @@ async function readFileAsyncIterator(filename) {
 }
 ```
 
-## Read generators
+## Reading from generators
 Now, instead of reading information from files, let's read it from generators.
 
 Generator example:
@@ -63,7 +63,7 @@ async function readStreamFromAsyncIterator() {
 }
 ```
 
-## Read async generators
+## Reading from async generators
 Combining async generators and async iterators is a great option as it does not require to generate a readable stream from the generator in order to iterate over it.
 
 Async generator example:
