@@ -63,6 +63,7 @@ async function readStreamFromAsyncIterator() {
   }
 }
 ```
+Note that `Readable.from` gets an iterable as parameter. We could pass an array for example.
 
 ## Reading from async generators
 Combining async generators and async iterators is a great option as it does not require to generate a readable stream from the generator in order to iterate over it.
