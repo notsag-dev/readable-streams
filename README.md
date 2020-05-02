@@ -58,3 +58,22 @@ async function readStreamFromAsyncIterator() {
   }
 }
 ```
+
+## Read async generators
+Async generator example:
+```JS
+function* generate() {
+  for (let i = 0; i <= 30; i++) {
+    yield i;
+  }
+}
+
+```
+### Read with `async iterators`
+```JS
+async function readAsyncGenerator() {
+  for await (const chunk of asyncGenerate()) {
+    console.log(chunk);
+  }
+}
+```
