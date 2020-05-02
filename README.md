@@ -64,6 +64,8 @@ async function readStreamFromAsyncIterator() {
 ```
 
 ## Read async generators
+Combining async generators and async iterators is a great option as it does not require to generate a readable stream from the generator in order to iterate over it.
+
 Async generator example:
 ```JS
 async function* asyncGenerate() {
