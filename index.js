@@ -92,7 +92,7 @@ readAsyncGenerator();
 
 // DON'Ts
 // - Don't use async functions as strams callbacks.
-// - Don't mix stream consumming strategies. E.g. if you use "on data",
+// - Don't mix stream consume strategies. E.g. if you use "on data",
 //   don't mix it with "on readable" or async iterators.
 //
 // Resources:
