@@ -41,6 +41,8 @@ async function readFileAsyncIterator(filename) {
 ```
 
 ## Read generators
+Now, instead of reading information from files, let's read it from generators.
+
 Generator example:
 ```JS
 function* generate() {
@@ -50,7 +52,7 @@ function* generate() {
 }
 ```
 
-### Read with `async iterators`
+### Read with `async iterators` strategy
 ```JS
 async function readStreamFromAsyncIterator() {
   const stream = Readable.from(generate());
@@ -64,14 +66,14 @@ async function readStreamFromAsyncIterator() {
 ## Read async generators
 Async generator example:
 ```JS
-function* generate() {
+async function* asyncGenerate() {
   for (let i = 0; i <= 30; i++) {
     yield i;
   }
 }
 
 ```
-### Read with `async iterators`
+### Read with `async iterators` strategy
 ```JS
 async function readAsyncGenerator() {
   for await (const chunk of asyncGenerate()) {
