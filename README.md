@@ -2,7 +2,8 @@
 Playing with some readable streams and async iterators examples and creating this for tomorrow when I have probably forgotten everything already.
 
 ## Reading files
-### Read with `on data`
+### Read with `on data` strategy
+Not great for buffering, there's no flow control. Data is read as quickly as possible.
 ```JS
 function readFile(filename) {
   const stream = createReadStream(filename);
@@ -13,7 +14,8 @@ function readFile(filename) {
 }
 ```
 
-### Read with `on readable`
+### Read with `on readable` strategy
+By using the `readable` event, the consumer has the freedom of deciding whether to read or not from the stream when the event is triggered.
 ```JS
 function readFilePolling(filename) {
   const stream = createReadStream(filename);
@@ -27,8 +29,8 @@ function readFilePolling(filename) {
 }
 ```
 
-
-### Read with `async iterators`
+### Read with `async iterators` strategy
+A very elegant option to using the readable event is to use async iterators. The consumer still has control on how data is consumed and additionally it brings more readability.
 ```JS
 async function readFileAsyncIterator(filename) {
   let chunk;
@@ -77,3 +79,7 @@ async function readAsyncGenerator() {
   }
 }
 ```
+
+# Resources
+- [Stream Into the Future (NodeJS Streams)](https://www.youtube.com/watch?v=aTEDCotcn20)
+- [Node streams documentation](https://nodejs.org/api/stream.html)
