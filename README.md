@@ -84,6 +84,6 @@ async function readAsyncGenerator() {
 }
 ```
 
-# Resources
+## Resources
 - [Stream Into the Future (NodeJS Streams)](https://www.youtube.com/watch?v=aTEDCotcn20)
 - [Node streams documentation](https://nodejs.org/api/stream.html)
