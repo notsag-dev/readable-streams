@@ -11,7 +11,6 @@ function readFile(filename) {
     console.log(chunk);
   });
 }
-readFile('./rfc793_TCP.txt');
 
 // Polling strategy for reading files (recommended over previous
 // approach). More control on the data flow as it's up to the consumer
@@ -27,7 +26,6 @@ function readFilePolling(filename) {
     }
   });
 }
-readFilePolling('./rfc793_TCP.txt');
 
 // Another polling strategy that looks quite elegant and readable:
 // async iterators.
@@ -37,7 +35,6 @@ async function readFileAsyncIterator(filename) {
     console.log(chunk);
   }
 }
-readFileAsyncIterator('./rfc793_TCP.txt');
 
 // Now, instead of reading from a file, let's use a generator to
 // generate the data.
@@ -70,7 +67,6 @@ async function readStreamFromAsyncIterator() {
     console.log(chunk);
   }
 }
-readStreamFromAsyncIterator();
 
 // Note: Readable.from can receive any iterable object as parameter.
 
@@ -88,7 +84,6 @@ async function readAsyncGenerator() {
     console.log(chunk);
   }
 }
-readAsyncGenerator();
 
 // DON'Ts
 // - Don't use async functions as strams callbacks.
